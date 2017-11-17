@@ -85,7 +85,3 @@ Some tools for CTF off line
 	　　
 	查看页面访问排名前十的URL
 	cat /var/log/apache2/access.log  | cut -f4 -d " " | sort | uniq -c | sort -k 1 -r | head -10　　
-	
-　
-
-再推荐一篇安全应急排查手册：[https://yq.aliyun.com/articles/177337](https://yq.aliyun.com/articles/177337) 
