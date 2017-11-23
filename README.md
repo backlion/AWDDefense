@@ -24,23 +24,23 @@ Some tools for CTF off line
 
 
 
-###AWD注意事项：
+### AWD注意事项：
 
-###ssh操作
+### ssh操作
 	ssh <-p 端口> 用户名@IP　　//登录
 	scp 文件路径  用户名@IP:存放路径　　//向ssh服务器上传输文件
 	
-###备份web目录
+### 备份web目录
 	tar -zcvf web.tar.gz /var/www/html/
 
-###查看已建立的网络连接以及对应进程
+### 查看已建立的网络连接以及对应进程
 	netstat -antulp | grep EST
 
-###用户管理
+### 用户管理
 	w 　　//查看当前用户
 	pkill -kill -t <用户tty>　　 //踢掉当前登录用户
 
-###进程管理
+### 进程管理
 	查看进程信息
 	ps aux | grep pid或者进程名　　
 	
@@ -53,7 +53,7 @@ Some tools for CTF off line
 	killall <进程名>
 	kill -9 <PID>
 	
-###iptables命令
+### iptables命令
 	封杀某个IP或者ip段，如：123.4.5.6
 	iptables -I INPUT -s 123.4.5.6 -j DROP
 	iptables -I INPUT -s 123.4.5.1/24 -j DROP
@@ -61,7 +61,7 @@ Some tools for CTF off line
 	禁止从某个主机ssh远程访问登陆到本机，如123.4.5.6
 	iptable -t filter -A INPUT -s 123.4.5.6 -p tcp --dport 22 -j DROP
 
-##Mysql数据库操作
+## Mysql数据库操作
 	
 	备份mysql数据库
 	mysqldump -u 用户名 -p 密码 数据库名 > back.sql　　//备份指定数据库
@@ -70,7 +70,7 @@ Some tools for CTF off line
 	还原mysql数据库
 	mysql -u 用户名 -p 密码 数据库名 < bak.sql
 
-###安全检查
+### 安全检查
 	
 	find / *.php -perm 4777 　　 //查找777的权限的php文件 
 	awk -F: '{if($3==0)print $1}' /etc/passwd　　//查看root权限的账号
